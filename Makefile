@@ -1,19 +1,12 @@
 build: torcx.tgz torcx.squashfs
 
+mosh-server:
+	wget -q https://github.com/dtinth/mosh-static/releases/download/run-2/mosh-server -O mosh-server
+	chmod +x mosh-server
 
-qemu.tar.xz:
-	wget -q https://download.qemu.org/qemu-5.2.0.tar.xz -O qemu.tar.xz
-
-qemu: qemu.tar.xz
-	tar -xJf qemu.tar.xz
-
-qemu-ga: qemu
-	cd qemu-* && ./configure && make qemu-ga
-
-
-torcx: qemu-ga
+torcx: mosh-server
 	mkdir -p rootfs/bin
-	cp -a qemu-*/build/qga/qemu-ga rootfs/bin/
+	cp mosh-server rootfs/bin/
 
 torcx.tgz: torcx
 	tar -C rootfs -czf torcx.tgz .

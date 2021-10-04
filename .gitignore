@@ -1,0 +1,5 @@
+/.idea/
+/mosh-server
+/torcx.tgz
+/torcx.squashfs
+/rootfs/bin/mosh-server
