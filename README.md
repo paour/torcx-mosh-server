@@ -14,6 +14,10 @@ I wrote a small script that I can run manually to install the modules I use.
 
 https://gist.github.com/paour/3fccdbd9daf6ea3cae15d4ae63c69155
 
+## Path
+
+Add `/var/run/torcx/bin` to your `PATH` environment var.
+
 # Troubleshooting
 
 - because the `mosh-server` binary is installed in an usual location, run the client `mosh` command with the `--server=/var/run/torcx/bin/mosh-server` switch
